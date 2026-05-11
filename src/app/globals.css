@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cinzel: 'Cinzel', serif;
+  --font-garamond: 'EB Garamond', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5ede0;
+  color: #2c1810;
+  font-family: var(--font-garamond);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ornamental divider */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #c4a07a;
+}
+
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c4a07a, transparent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f5ede0; }
+::-webkit-scrollbar-thumb { background: #c4a07a; border-radius: 3px; }
+
+/* Typography */
+.font-cinzel { font-family: var(--font-cinzel), serif; }
+.font-garamond { font-family: var(--font-garamond), Georgia, serif; }
+
+/* Page transitions */
+.page-enter {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Parchment texture via radial gradient */
+.parchment-bg {
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(196,120,58,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(139,69,19,0.05) 0%, transparent 50%);
+}
